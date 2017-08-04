@@ -156,3 +156,6 @@ $error_flag = $_SESSION['isLoginError'] ?? false;
         <script src="js/app.min.js"></script>
     </body>
 </html>
+<?php
+require_once('analytics.php');
+?>

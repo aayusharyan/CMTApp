@@ -2,6 +2,8 @@
 require_once('config.php');
 require_once('check_login.php');
 require_once('functions/get_total_users.php');
+require_once('functions/get_traffic_analytics.php');
+require_once('functions/get_visit_analytics.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -50,23 +52,47 @@ require_once('functions/get_total_users.php');
                 <div class="row quick-stats">
                     <div class="col-sm-6 col-md-3">
                         <div class="quick-stats__item bg-light-blue">
+                            <?php
+                            $traffic_data = get_traffic_analytics();
+                            ?>
                             <div class="quick-stats__info">
-                                <h2>987,459</h2>
-                                <small>Total Website Traffics</small>
+                                <h2><?= number_format($traffic_data->total) ?></h2>
+                                <small>Total Website Traffic</small>
                             </div>
 
-                            <div class="quick-stats__chart sparkline-bar-stats">6,4,8,6,5,6,7,8,3,5,9,5</div>
+                            <div class="quick-stats__chart sparkline-bar-stats">
+                                <?php
+                                $num_arr = array ();
+                                    foreach ($traffic_data->data as $single_group) {
+                                    $num_arr [] = $single_group->count;
+                                }
+                                print (implode($num_arr, ','));
+                                ?>
+                            </div>
                         </div>
                     </div>
 
                     <div class="col-sm-6 col-md-3">
                         <div class="quick-stats__item bg-amber">
+                            <?php
+                            $visit_data = get_visit_analytics();
+                            ?>
                             <div class="quick-stats__info">
-                                <h2>356,785K</h2>
+                                <h2><?= number_format($visit_data->total) ?></h2>
                                 <small>Total Website Impressions</small>
                             </div>
 
-                            <div class="quick-stats__chart sparkline-bar-stats">4,7,6,2,5,3,8,6,6,4,8,6</div>
+                            <div class="quick-stats__chart sparkline-bar-stats">
+                            
+                                <?php
+                                $num_arr = array ();
+                                    foreach ($visit_data->data as $single_group) {
+                                    $num_arr [] = $single_group->count;
+                                }
+                                print (implode($num_arr, ','));
+                                ?>
+                            
+                            </div>
                         </div>
                     </div>
 
@@ -84,11 +110,22 @@ require_once('functions/get_total_users.php');
                     <div class="col-sm-6 col-md-3">
                         <div class="quick-stats__item bg-red">
                             <div class="quick-stats__info">
-                                <h2><?= get_total_users(true); ?></h2>
+                                <?php
+                                $total_users = get_total_users(true);
+                                ?>
+                                <h2><?= $total_users->total; ?></h2>
                                 <small>Total Registrations</small>
                             </div>
 
-                            <div class="quick-stats__chart sparkline-bar-stats">5,6,3,9,7,5,4,6,5,6,4,9</div>
+                            <div class="quick-stats__chart sparkline-bar-stats">
+                                <?php
+                                $num_arr = array ();
+                                foreach ($total_users->data as $single_group) {
+                                    $num_arr [] = $single_group->count;
+                                }
+                                print (implode($num_arr, ','));
+                                ?>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -529,3 +566,6 @@ require_once('functions/get_total_users.php');
         <script src="js/app.min.js"></script>
     </body>
 </html>
+<?php
+require_once('functions/analytics.php');
+?>

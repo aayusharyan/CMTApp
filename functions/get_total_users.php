@@ -3,11 +3,14 @@
 require_once($_SERVER['DOCUMENT_ROOT'].'/CMTApp/config.php');
 
 function get_total_users ($detailed = false) {
+    
+    $return_obj = new stdClass();
     try {
         $db = getDB();
         $stmt = $db->prepare("SELECT * FROM student_details");
         $stmt->execute();
         $count=$stmt->rowCount();
+        $return_obj->total = $count;
         //return ($count);
     } catch (PDOException $e) {
         echo '{"error": {"text":'. $e->getMessage() .'}}';
@@ -16,16 +19,17 @@ function get_total_users ($detailed = false) {
     if ($detailed) {
         try {
             $db = getDB();
-            $stmt = $db->prepare("SELECT COUNT(id) as count,create_date FROM student_details GROUP BY create_date ORDER BY create_date DESC LIMIT 0, 2");
+            $stmt = $db->prepare("SELECT COUNT(id) as count,create_date FROM student_details GROUP BY create_date ORDER BY create_date DESC LIMIT 0, 12");
             $stmt->execute();
             $data = $stmt->fetchAll(PDO::FETCH_OBJ);
-            print '<pre>'; print_r($data); print '</pre>';
+            $return_obj->data = $data;
+            //print '<pre>'; print_r($data); print '</pre>';
         } catch (PDOException $e) {
             echo '{"error": {"text":'. $e->getMessage() .'}}';
         }
         
     }
     
+    return ($return_obj);
 }
-get_total_users (true);
 ?>
