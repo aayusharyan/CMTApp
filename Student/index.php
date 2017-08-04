@@ -57,7 +57,7 @@ $error_flag = $_SESSION['isLoginError'] ?? false;
                         </div>
                         <div class="pull-left">
                             <h6>
-                                <a href="#pablo" class="link">Create Account</a>
+                                <a href="Register/index" class="link">Create Account</a>
                             </h6>
                         </div>
                         <div class="pull-right">

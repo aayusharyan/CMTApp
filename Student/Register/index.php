@@ -157,24 +157,139 @@
                                                     </select>
                                                 </div>
                                             </div>
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon">
+                                                            <i class="material-icons">layers</i>                                                   </span>
+                                                        <div class="form-group label-floating">
+                                                            <label class="control-label">Branch</label>
+                                                            <select class="form-control">
+                                                                <option disabled="" selected=""></option>
+                                                                <option value="Afghanistan"> Sinhgad Institute of Technology, Lonavala </option>
+                                                                <option value="Albania"> Albania </option>
+                                                                <option value="Algeria"> Algeria </option>
+                                                                <option value="..."> Other </option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon">
+                                                            <i class="material-icons">library_books</i>                                                   </span>
+                                                        <div class="form-group label-floating">
+                                                            <label class="control-label">Academic Year</label>
+                                                            <select class="form-control">
+                                                                <option disabled="" selected=""></option>
+                                                                <option value="Afghanistan"> Sinhgad Institute of Technology, Lonavala </option>
+                                                                <option value="Albania"> Albania </option>
+                                                                <option value="Algeria"> Algeria </option>
+                                                                <option value="..."> Other </option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
 
                                         </div>
-		                            </div>
-		                            <div class="tab-pane" id="description">
+		                            <div class="tab-pane" id="extras">
 		                                <div class="row">
-		                                    <h4 class="info-text"> Drop us a small description.</h4>
-		                                    <div class="col-sm-6 col-sm-offset-1">
-	                                    		<div class="form-group">
-		                                            <label>Room description</label>
-		                                            <textarea class="form-control" placeholder="" rows="6"></textarea>
-		                                        </div>
+		                                    <h4 class="info-text"> Your Interest's</h4>
+                                            <div class="col-sm-4 col-sm-offset-1">
+                                                <div class="checkbox form-group">
+                                                    <label>
+                                                        <input type="checkbox" name="optionsCheckboxes">
+                                                        Cyber Security
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox form-group">
+                                                    <label>
+                                                        <input type="checkbox" name="optionsCheckboxes">
+                                                       Computer Networking
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox form-group">
+                                                    <label>
+                                                        <input type="checkbox" name="optionsCheckboxes">
+                                                        System Engineering
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox form-group">
+                                                    <label>
+                                                        <input type="checkbox" name="optionsCheckboxes">
+                                                        Database Management
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox form-group">
+                                                    <label>
+                                                        <input type="checkbox" name="optionsCheckboxes">
+                                                        Data Structures
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox form-group">
+                                                    <label>
+                                                        <input type="checkbox" name="optionsCheckboxes">
+                                                        Unchecked
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox form-group">
+                                                    <label>
+                                                        <input type="checkbox" name="optionsCheckboxes">
+                                                        Unchecked
+                                                    </label>
+                                                </div>
+                                                
 		                                    </div>
-		                                    <div class="col-sm-4">
-		                                    	<div class="form-group">
-		                                            <label class="control-label">Example</label>
-		                                            <p class="description">"The room really nice name is recognized as being a really awesome room. We use it every sunday when we go fishing and we catch a lot. It has some kind of magic shield around it."</p>
-		                                        </div>
-		                                    </div>
+                                            
+                                            <div class="col-sm-4 col-sm-offset-1">
+                                                <div class="checkbox form-group">
+                                                    <label>
+                                                        <input type="checkbox" name="optionsCheckboxes">
+                                                        Unchecked
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox form-group">
+                                                    <label>
+                                                        <input type="checkbox" name="optionsCheckboxes">
+                                                        Unchecked
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox form-group">
+                                                    <label>
+                                                        <input type="checkbox" name="optionsCheckboxes">
+                                                        Unchecked
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox form-group">
+                                                    <label>
+                                                        <input type="checkbox" name="optionsCheckboxes">
+                                                        Unchecked
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox form-group">
+                                                    <label>
+                                                        <input type="checkbox" name="optionsCheckboxes">
+                                                        Unchecked
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox form-group">
+                                                    <label>
+                                                        <input type="checkbox" name="optionsCheckboxes">
+                                                        Unchecked
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox form-group">
+                                                    <label>
+                                                        <input type="checkbox" name="optionsCheckboxes">
+                                                        Unchecked
+                                                    </label>
+                                                </div>
+
+                                            </div>
+                                            
 		                                </div>
 		                            </div>
 		                        </div>
@@ -199,7 +314,7 @@
 
 	    <div class="footer">
 	        <div class="container text-center">
-	             Made with <i class="fa fa-heart heart"></i> by <a href="http://www.creative-tim.com">Creative Tim</a>. Free download <a href="http://www.creative-tim.com/product/material-bootstrap-wizard">here.</a>
+	             Made with <i class="fa fa-heart heart"></i> by Aayush Sinha &amp;  Sudarshan Amirineni. 
 	        </div>
 	    </div>
 	</div>
