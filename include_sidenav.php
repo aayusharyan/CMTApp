@@ -14,7 +14,7 @@
 
             <li><a href="calendar.html"><i class="zmdi zmdi-calendar"></i> Send Mails</a></li>
 
-            <li><a href="photo-gallery.html"><i class="zmdi zmdi-image"></i> Photo Gallery</a></li>
+            <li><a href="photo-gallery.html"><i class="zmdi zmdi-image"></i> Conference Settings</a></li>
         </ul>
     </div>
 </aside>

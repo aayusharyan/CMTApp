@@ -1,6 +1,7 @@
 <?php
 require_once('config.php');
 require_once('check_login.php');
+require_once('functions/get_total_users.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -83,8 +84,8 @@ require_once('check_login.php');
                     <div class="col-sm-6 col-md-3">
                         <div class="quick-stats__item bg-red">
                             <div class="quick-stats__info">
-                                <h2>214</h2>
-                                <small>Total Support Tickets</small>
+                                <h2><?= get_total_users(true); ?></h2>
+                                <small>Total Registrations</small>
                             </div>
 
                             <div class="quick-stats__chart sparkline-bar-stats">5,6,3,9,7,5,4,6,5,6,4,9</div>
