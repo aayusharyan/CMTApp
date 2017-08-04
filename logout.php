@@ -1,3 +1,7 @@
 <?php
-echo "Page under COnstruction on Priority List";
+session_start();
+unset($_SESSION['id']);
+unset($_SESSION['name']);
+unset($_SESSION['email']);
+header('location: index');
 ?>

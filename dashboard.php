@@ -1,5 +1,6 @@
 <?php
-require('config.php');
+require_once('config.php');
+require_once('check_login.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,28 +31,18 @@ require('config.php');
             
 
             <?php
-            require('include_header.php');
-            require('include_sidenav.php');
+            require_once('include_header.php');
+            require_once('include_sidenav.php');
             ?>
 
             
             <section class="content">
                 <header class="content__title">
                     <h1>Dashboard</h1>
-                    <small>Welcome to the unique Material Design admin web app experience!</small>
 
                     <div class="actions">
-                            <a href="" class="actions__item zmdi zmdi-trending-up"></a>
-                            <a href="" class="actions__item zmdi zmdi-check-all"></a>
-
-                            <div class="dropdown actions__item">
-                                <i data-toggle="dropdown" class="zmdi zmdi-more-vert"></i>
-                                <div class="dropdown-menu dropdown-menu-right">
-                                    <a href="" class="dropdown-item">Refresh</a>
-                                    <a href="" class="dropdown-item">Manage Widgets</a>
-                                    <a href="" class="dropdown-item">Settings</a>
-                                </div>
-                            </div>
+                            <a href="dashboard" class="actions__item zmdi zmdi-refresh"></a>
+                            
                         </div>
                 </header>
 
@@ -503,42 +494,9 @@ require('config.php');
             </section>
         </main>
 
-        <!-- Older IE warning message -->
-            <!--[if IE]>
-                <div class="ie-warning">
-                    <h1>Warning!!</h1>
-                    <p>You are using an outdated version of Internet Explorer, please upgrade to any of the following web browsers to access this website.</p>
-
-                    <div class="ie-warning__downloads">
-                        <a href="http://www.google.com/chrome">
-                            <img src="img/browsers/chrome.png" alt="">
-                        </a>
-
-                        <a href="https://www.mozilla.org/en-US/firefox/new">
-                            <img src="img/browsers/firefox.png" alt="">
-                        </a>
-
-                        <a href="http://www.opera.com">
-                            <img src="img/browsers/opera.png" alt="">
-                        </a>
-
-                        <a href="https://support.apple.com/downloads/safari">
-                            <img src="img/browsers/safari.png" alt="">
-                        </a>
-
-                        <a href="https://www.microsoft.com/en-us/windows/microsoft-edge">
-                            <img src="img/browsers/edge.png" alt="">
-                        </a>
-
-                        <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
-                            <img src="img/browsers/ie.png" alt="">
-                        </a>
-                    </div>
-                    <p>Sorry for the inconvenience!</p>
-                </div>
-            <![endif]-->
-
-        <!-- Javascript -->
+        <?php
+        require_once('old_ie_warning.php');
+        ?>
         <!-- Vendors -->
         <script src="vendors/bower_components/jquery/dist/jquery.min.js"></script>
         <script src="vendors/bower_components/tether/dist/js/tether.min.js"></script>
