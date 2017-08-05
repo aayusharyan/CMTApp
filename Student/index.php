@@ -39,6 +39,12 @@ $error_flag = $_SESSION['isLoginError'] ?? false;
                             
                         </div>
                         <div class="content">
+                            <div class="social-line">
+                                <a href="#pablo" class="btn btn-neutral btn-facebook btn-icon">
+                                    <i class="fa fa-facebook-square"></i>
+                                </a>
+                            </div>
+                            <br/>
                             <div class="input-group form-group-no-border input-lg">
                                 <span class="input-group-addon">
                                     <i class="now-ui-icons ui-1_email-85"></i>
@@ -71,37 +77,10 @@ $error_flag = $_SESSION['isLoginError'] ?? false;
         </div>
         <footer class="footer">
             <div class="container">
-                <nav>
-                    <ul>
-                        <li>
-                            <a href="#">
-                               LOL
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                LOL
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                LOL
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                LOL
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="copyright">
-                    &copy;
-                    <script>
-                        document.write(new Date().getFullYear())
-                    </script>, Coded by
-                    <a href="http://aayushsinha.com/" target="_blank">Aayush Sinha</a>  &amp;
-                    <a href="https://www.facebook.com/sudarshan.amirineni" target="_blank">Sudarshan Amirineni</a>
+                <div class="footer">
+                    <div class="container text-center">
+                        Made with <i class="fa fa-heart heart" style="color: #FF3B30"></i> by Aayush Sinha &amp;  Sudarshan Amirineni. 
+                    </div>
                 </div>
             </div>
         </footer>

@@ -1,6 +1,6 @@
 <?php
 
-require('config.php');
+require_once('config.php');
 
 $password = $_POST ['login_password'];
 $usernameEmail = $_POST ['login_email'];
