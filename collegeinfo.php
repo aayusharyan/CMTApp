@@ -1,16 +1,16 @@
 <?php
 require_once('config.php');
 require_once('check_login.php');
-require_once('functions/get_domain_list.php');
+require_once('functions/get_college_list.php');
 
 $error_flag = 0;
-if (isset ($_SESSION['errorAddingDomain'])) {
-    if ($_SESSION['errorAddingDomain']) {
+if (isset ($_SESSION['errorAddingCollege'])) {
+    if ($_SESSION['errorAddingCollege']) {
         $error_flag = 1;
     } else {
         $error_flag = -1;
     }
-    unset($_SESSION['errorAddingDomain']);
+    unset($_SESSION['errorAddingCollege']);
 }
 
 ?>
@@ -68,21 +68,29 @@ if (isset ($_SESSION['errorAddingDomain'])) {
                     </div>
 
                     <div class="card-block">
-                        <form class="row" method="post" action="new_domain.php">
-                            <div class="col-sm-12 col-md-7">
+                        <form class="row" method="post" action="new_college.php">
+                            <div class="col-sm-12 col-md-7 col-xl-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="College Name" name="college_name">
+                                    <input type="text" class="form-control" placeholder="College Name" name="college_name" required>
                                     <i class="form-group__bar"></i>
                                 </div>
 
                             </div>
-                            <div class="col-sm-12 col-md-3">
+                            <div class="col-sm-12 col-md-5 col-xl-2">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="College Short Name (Unique)" name="college_short_name">
+                                    <input type="text" class="form-control" placeholder="Short Name (Unique)" name="college_short_name" required>
+                                    
+                                    <i class="form-group__bar"></i>
+                                </div>
+
+                            </div>
+                            <div class="col-sm-12 col-md-8 col-xl-2">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="College Code" name="college_code">
                                     <i class="form-group__bar"></i>
                                 </div>
                             </div>
-                            <div class="col-sm-6 col-md-2">
+                            <div class="col-sm-6 col-md-4 col-xl-2">
                                 <button type="submit" class="form-group btn btn-success">Add New</button>
                             </div>
                         </form>
@@ -99,20 +107,22 @@ if (isset ($_SESSION['errorAddingDomain'])) {
                             <thead>
                                 <tr>
                                     <th>#</th>
+                                    <th>College Code</th>
                                     <th>Short Name</th>
                                     <th>College Name</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php
-                                $domains = get_domain_list ();
+                                $colleges = get_college_list ();
                                 $count = 1;
-                                foreach ($domains as $single_domain) {
+                                foreach ($colleges as $single_college) {
                                 ?>
                                 <tr>
                                     <th scope="row"><?= $count++; ?></th>
-                                    <td><?= $single_domain->short_name; ?></td>
-                                    <td><?= $single_domain->full_name ?></td>
+                                    <td><?= $single_college->code??"-----" ?></td>
+                                    <td><?= $single_college->short_name; ?></td>
+                                    <td><?= $single_college->full_name ?></td>
                                 </tr>
                                 <?php
                                 }
@@ -135,7 +145,7 @@ if (isset ($_SESSION['errorAddingDomain'])) {
                             </div>
                             <div class="modal-body">
                                 College Information once added cannot be changed or removed. Please keep that in Mind.
-                                College Shortnames should be Unique
+                                College Shortnames should be Unique. College Code is of Pune University. (Not Mandatory)
                                 <!--//TODO: Change (Improve) the Text -->
                             </div>
                             <div class="modal-footer">
@@ -247,7 +257,7 @@ if (isset ($_SESSION['errorAddingDomain'])) {
         if ($error_flag == 1) {
         ?>
         <script>
-            notify ("bottom", "center", "", "warning", "animated fadeInUp", "animated fadeOutUp", "Not able to add Domain, Please Check and Try again!");
+            notify ("bottom", "center", "", "warning", "animated fadeInUp", "animated fadeOutUp", "Not able to add College, Please Check and Try again!");
         </script>
         <?php
         } else if ($error_flag == -1) { ?>
