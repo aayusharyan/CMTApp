@@ -7,7 +7,7 @@ $new_domain_shortname = $_POST['domain_short_name'];
 
 $_SESSION['errorAddingDomain'] = false;
 
-if (($new_domain_name != "") && ($new_domain_shortname != "") && (ctype_alpha($new_domain_shortname)) && (strlen($new_domain_shortname) <= 6)) {
+if (($new_domain_name != "") && ($new_domain_shortname != "") && (ctype_alpha($new_domain_shortname)) && (strlen($new_domain_shortname) == 3) && ($new_domain_shortname != "MU")) {
     try {
         $db = getDB();
         $stmt = $db->prepare("INSERT INTO domains (short_name, full_name) VALUES (:domain_short_name, :domain_full_name)");

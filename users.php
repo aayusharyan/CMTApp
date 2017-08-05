@@ -17,6 +17,11 @@ require_once('functions/get_student_list.php');
 
         <!-- App styles -->
         <link rel="stylesheet" href="css/app.min.css">
+        <style>
+            .no-margin-below {
+                margin-bottom: 0px !important;
+            }
+        </style>
     </head>
 
     <body data-ma-theme="green">
@@ -43,6 +48,7 @@ require_once('functions/get_student_list.php');
                     <small>View and Manage all the Users (Students).</small>
 
                     <div class="actions">
+                        <button type="button" class="btn btn-outline-warning waves-effect" data-toggle="modal" data-target="#modal-info">View Custom Fields</button>
                         <a href="users" class="actions__item zmdi zmdi-refresh"></a>
 
                     </div>
@@ -66,7 +72,7 @@ require_once('functions/get_student_list.php');
                                         <th>College</th>
                                         <th>EMail Id</th>
                                         <th>Role</th>
-                                        <th>State</th>
+                                        <th>Status</th>
                                     </tr>
                                 </thead>
                                 <tfoot>
@@ -76,7 +82,7 @@ require_once('functions/get_student_list.php');
                                         <th>College</th>
                                         <th>EMail Id</th>
                                         <th>Role</th>
-                                        <th>State</th>
+                                        <th>Status</th>
                                     </tr>
                                 </tfoot>
                                 <tbody>
@@ -85,7 +91,7 @@ require_once('functions/get_student_list.php');
                                     
                                     ?>
                                     <tr>
-                                        <td><?= $single_Student->uid; ?></td>
+                                        <td><button onclick="location.href='users/<?= $single_Student->uid; ?>'" type="button" class="btn btn-link waves-effect" style="padding-left: 0px; padding-right: 0px;"><?= $single_Student->uid; ?></button></td>
                                         <td><?= $single_Student->name; ?></td>
                                         <td><?= $single_Student->college; ?></td>
                                         <td><?= $single_Student->email; ?></td>
@@ -103,7 +109,71 @@ require_once('functions/get_student_list.php');
                 </div>
 
 
-               
+                <!-- Information Modal -->
+                <div class="modal fade" id="modal-info" tabindex="-1">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title pull-left">Select Data to View</h5>
+                            </div>
+                            <div class="modal-body">
+                                <?php
+                                //TODO: Change the Values here everytime there is a Change in the Student DB!!! IMPORTANT
+                                ?>
+
+                                <div class="form-group no-margin-below">
+                                    <label><h2 class="card-block__title">LOLOL</h2></label>
+                                    <div class="toggle-switch">
+                                        <input type="checkbox" class="toggle-switch__checkbox">
+                                        <i class="toggle-switch__helper"></i>
+                                    </div>
+                                </div>
+                                <div class="form-group no-margin-below">
+                                    <label><h2 class="card-block__title">LOLOL</h2></label>
+                                    <div class="toggle-switch">
+                                        <input type="checkbox" class="toggle-switch__checkbox">
+                                        <i class="toggle-switch__helper"></i>
+                                    </div>
+                                </div>
+                                <div class="form-group no-margin-below">
+                                    <label><h2 class="card-block__title">LOLOL</h2></label>
+                                    <div class="toggle-switch">
+                                        <input type="checkbox" class="toggle-switch__checkbox">
+                                        <i class="toggle-switch__helper"></i>
+                                    </div>
+                                </div>
+                                <div class="form-group no-margin-below">
+                                    <label><h2 class="card-block__title">LOLOL</h2></label>
+                                    <div class="toggle-switch">
+                                        <input type="checkbox" class="toggle-switch__checkbox">
+                                        <i class="toggle-switch__helper"></i>
+                                    </div>
+                                </div>
+                                <div class="form-group no-margin-below">
+                                    <label><h2 class="card-block__title">LOLOL</h2></label>
+                                    <div class="toggle-switch">
+                                        <input type="checkbox" class="toggle-switch__checkbox">
+                                        <i class="toggle-switch__helper"></i>
+                                    </div>
+                                </div>
+                                <div class="form-group no-margin-below">
+                                    <label><h2 class="card-block__title">LOLOL</h2></label>
+                                    <div class="toggle-switch">
+                                        <input type="checkbox" class="toggle-switch__checkbox">
+                                        <i class="toggle-switch__helper"></i>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="modal-footer">
+                                
+                                
+                                <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-success">View</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                
 

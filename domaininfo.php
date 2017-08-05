@@ -137,7 +137,8 @@ if (isset ($_SESSION['errorAddingDomain'])) {
                                 Domain Information once added cannot be changed or removed. Please keep that in Mind.
                                 Also Domain Shortname needs to be Alpha only (Should Start with an Alphabet).
                                 Domain Shortnames should be Unique
-                                Domain Shortname should be less than or equalto 6 characters
+                                Domain Shortname should be equal to 3 characters.
+                                MU is a Reserved Keyword, Thus... Cannot be used for Domain Shortname.
                                 <!--//TODO: Change (Improve) the Text -->
                             </div>
                             <div class="modal-footer">
