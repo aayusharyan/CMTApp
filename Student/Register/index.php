@@ -26,17 +26,7 @@
 
 <body>
 	<div class="image-container set-full-height" style="background-image: url('img/wizard-book.jpg')">
-	    <!--   Creative Tim Branding   -->
-	    <a href="http://creative-tim.com">
-	         <div class="logo-container">
-	            <div class="logo">
-	                <img src="img/new_logo.png">
-	            </div>
-	            <div class="brand">
-	                Creative Tim
-	            </div>
-	        </div>
-	    </a>
+	    
 
 	    <!--   Big container   -->
 	    <div class="container">
@@ -85,7 +75,7 @@
                                                     </span>
                                                     <div class="form-group label-floating">
                                                         <label class="control-label">Your Email Id</label>
-                                                        <input name="text" type="text" class="form-control" >
+                                                        <input name="email" type="text" class="form-control" >
                                                     </div>
                                                 </div>
 
@@ -115,11 +105,11 @@
                                                         <i class="material-icons">account_box</i>                                                   </span>
                                                     <div class="form-group label-floating">
                                                         <label class="control-label">Gender</label>
-                                                        <select class="form-control">
+                                                        <select class="form-control" name="gender">
                                                             <option disabled="" selected=""></option>
                                                             <option value="Male"> Male </option>
                                                             <option value="Female"> Female </option>
-                                                            <option value="Other"> Other </option>
+                                                            <option value="Other"> Prefer Not  to Say </option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -128,7 +118,7 @@
                                                         <i class="material-icons">style</i>                                                   </span>
                                                     <div class="form-group label-floating">
                                                         <label class="control-label">Role</label>
-                                                        <select class="form-control">
+                                                        <select class="form-control" name="role">
                                                             <option disabled="" selected=""></option>
                                                             <option value="Presenter"> Presenter </option>
                                                             <option value="Attendee"> Attendee </option>
@@ -148,7 +138,7 @@
                                                     <i class="material-icons">school</i>                                                   </span>
                                                 <div class="form-group label-floating">
                                                     <label class="control-label">College</label>
-                                                    <select class="form-control">
+                                                    <select class="form-control" name="college">
                                                         <option disabled="" selected=""></option>
                                                         <option value="Afghanistan"> Sinhgad Institute of Technology, Lonavala </option>
                                                         <option value="Albania"> Albania </option>
@@ -164,12 +154,12 @@
                                                             <i class="material-icons">layers</i>                                                   </span>
                                                         <div class="form-group label-floating">
                                                             <label class="control-label">Branch</label>
-                                                            <select class="form-control">
+                                                            <select class="form-control" name="branch">
                                                                 <option disabled="" selected=""></option>
-                                                                <option value="Afghanistan"> Sinhgad Institute of Technology, Lonavala </option>
-                                                                <option value="Albania"> Albania </option>
-                                                                <option value="Algeria"> Algeria </option>
-                                                                <option value="..."> Other </option>
+                                                                <option value="Computer Enginerring"> Computer Enginerring </option>
+                                                                <option value="Information Technology"> Information Technology </option>
+                                                                <option value="Electronics &amp; Tele-Communication"> Electronics &amp; Tele-Communication </option>
+                                                                <option value="Other"> Other </option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -180,12 +170,16 @@
                                                             <i class="material-icons">library_books</i>                                                   </span>
                                                         <div class="form-group label-floating">
                                                             <label class="control-label">Academic Year</label>
-                                                            <select class="form-control">
+                                                            <select class="form-control" name="year">
                                                                 <option disabled="" selected=""></option>
-                                                                <option value="Afghanistan"> Sinhgad Institute of Technology, Lonavala </option>
-                                                                <option value="Albania"> Albania </option>
-                                                                <option value="Algeria"> Algeria </option>
-                                                                <option value="..."> Other </option>
+                                                                <option disabled="">--Bachelor's--</option>
+                                                                <option value="First Year"> First Year </option>
+                                                                <option value="Second Year"> Second Year </option>
+                                                                <option value="Third Year"> Third Year </option>
+                                                                <option value="Fourth Year"> Fourth Year </option>
+                                                                <option disabled="">--Master's--</option>
+                                                                <option value="Master's First Year"> First Year </option>
+                                                                <option value="Master's Second Year"> Second Year </option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -201,43 +195,43 @@
                                             <div class="col-sm-4 col-sm-offset-1">
                                                 <div class="checkbox form-group">
                                                     <label>
-                                                        <input type="checkbox" name="optionsCheckboxes">
+                                                        <input type="checkbox" name="checkbox[]" value="Cyber Security">
                                                         Cyber Security
                                                     </label>
                                                 </div>
                                                 <div class="checkbox form-group">
                                                     <label>
-                                                        <input type="checkbox" name="optionsCheckboxes">
+                                                        <input type="checkbox" name="checkbox[]" value="Computer Networking">
                                                        Computer Networking
                                                     </label>
                                                 </div>
                                                 <div class="checkbox form-group">
                                                     <label>
-                                                        <input type="checkbox" name="optionsCheckboxes">
+                                                        <input type="checkbox" name="checkbox[]" value="System Engineering">
                                                         System Engineering
                                                     </label>
                                                 </div>
                                                 <div class="checkbox form-group">
                                                     <label>
-                                                        <input type="checkbox" name="optionsCheckboxes">
+                                                        <input type="checkbox" name="checkbox[]" value="Database Management">
                                                         Database Management
                                                     </label>
                                                 </div>
                                                 <div class="checkbox form-group">
                                                     <label>
-                                                        <input type="checkbox" name="optionsCheckboxes">
+                                                        <input type="checkbox" name="checkbox[]" value="Data Structures">
                                                         Data Structures
                                                     </label>
                                                 </div>
                                                 <div class="checkbox form-group">
                                                     <label>
-                                                        <input type="checkbox" name="optionsCheckboxes">
+                                                        <input type="checkbox" name="checkbox[]">
                                                         Unchecked
                                                     </label>
                                                 </div>
                                                 <div class="checkbox form-group">
                                                     <label>
-                                                        <input type="checkbox" name="optionsCheckboxes">
+                                                        <input type="checkbox" name="checkbox[]">
                                                         Unchecked
                                                     </label>
                                                 </div>
@@ -247,43 +241,43 @@
                                             <div class="col-sm-4 col-sm-offset-1">
                                                 <div class="checkbox form-group">
                                                     <label>
-                                                        <input type="checkbox" name="optionsCheckboxes">
+                                                        <input type="checkbox" name="checkbox[]">
                                                         Unchecked
                                                     </label>
                                                 </div>
                                                 <div class="checkbox form-group">
                                                     <label>
-                                                        <input type="checkbox" name="optionsCheckboxes">
+                                                        <input type="checkbox" name="checkbox[]">
                                                         Unchecked
                                                     </label>
                                                 </div>
                                                 <div class="checkbox form-group">
                                                     <label>
-                                                        <input type="checkbox" name="optionsCheckboxes">
+                                                        <input type="checkbox" name="checkbox[]">
+                                                        Uncheckedcheckbox[]
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox form-group">
+                                                    <label>
+                                                        <input type="checkbox" name="checkbox[]">
                                                         Unchecked
                                                     </label>
                                                 </div>
                                                 <div class="checkbox form-group">
                                                     <label>
-                                                        <input type="checkbox" name="optionsCheckboxes">
+                                                        <input type="checkbox" name="checkbox[]">
                                                         Unchecked
                                                     </label>
                                                 </div>
                                                 <div class="checkbox form-group">
                                                     <label>
-                                                        <input type="checkbox" name="optionsCheckboxes">
+                                                        <input type="checkbox" name="checkbox[]">
                                                         Unchecked
                                                     </label>
                                                 </div>
                                                 <div class="checkbox form-group">
                                                     <label>
-                                                        <input type="checkbox" name="optionsCheckboxes">
-                                                        Unchecked
-                                                    </label>
-                                                </div>
-                                                <div class="checkbox form-group">
-                                                    <label>
-                                                        <input type="checkbox" name="optionsCheckboxes">
+                                                        <input type="checkbox" name="checkbox[]">
                                                         Unchecked
                                                     </label>
                                                 </div>
