@@ -35,7 +35,7 @@
 		            <!--      Wizard container        -->
 		            <div class="wizard-container">
 		                <div class="card wizard-card" data-color="red" id="wizard">
-		                    <form action="" method="POST">
+		                    <form action="validate.php" method="POST">
 		                <!--        You can switch " data-color="blue" "  with one of the next bright colors: "green", "orange", "red", "purple"             -->
 
 		                    	<div class="wizard-header">
@@ -85,7 +85,7 @@
                                                     </span>
                                                     <div class="form-group label-floating">
                                                         <label class="control-label">Your Password</label>
-                                                        <input type="password" id="password" name="password" class="form-control">
+                                                        <input type="password" name="password" class="form-control">
                                                         
                                                     </div>
                                                 </div>
@@ -94,7 +94,7 @@
 		                                	<div class="col-sm-6">
                                                 <div class="input-group">
                                                     <span class="input-group-addon">
-                                                        <i class="material-icons">phone</i>                                                    </span>
+                                                        <i class="material-icons">phone</i>&emsp;+91                                                  </span>
                                                     <div class="form-group label-floating">
                                                         <label class="control-label">Phone No. <small>(required)</small></label>
                                                         <input name="phone" type="text" class="form-control">
@@ -290,7 +290,7 @@
 	                        	<div class="wizard-footer">
 	                            	<div class="pull-right">
 	                                    <input type='button' class='btn btn-next btn-fill btn-danger btn-wd' name='next' value='Next' />
-	                                    <input type='button' class='btn btn-finish btn-fill btn-danger btn-wd' name='finish' value='Finish' />
+	                                    <input type='submit' class='btn btn-finish btn-fill btn-danger btn-wd' name='finish' value='Finish' />
 	                                </div>
 	                                <div class="pull-left">
 	                                    <input type='button' class='btn btn-previous btn-fill btn-default btn-wd' name='previous' value='Previous' />
@@ -308,7 +308,7 @@
 
 	    <div class="footer">
 	        <div class="container text-center">
-	             Made with <i class="fa fa-heart heart"></i> by Aayush Sinha &amp;  Sudarshan Amirineni. 
+	             Made with <i class="fa fa-heart heart"></i> by Aayush Sinha &amp; Sudarshan Amirineni. 
 	        </div>
 	    </div>
 	</div>
@@ -326,4 +326,5 @@
 
 	<!--  More information about jquery.validate here: http://jqueryvalidation.org/	 -->
 	<script src="js/jquery.validate.min.js"></script>
+    <script src="script.js"></script>
 </html>
