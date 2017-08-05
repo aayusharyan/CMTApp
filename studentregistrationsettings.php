@@ -45,7 +45,7 @@ require_once('check_login.php');
 
                     <div class="actions">
                         <a href="users" class="actions__item zmdi zmdi-info" data-toggle="modal" data-target="#modal-info"></a>
-                        <a href="domaininfo" class="actions__item zmdi zmdi-refresh"></a>
+                        <a href="studentregistrationsettings" class="actions__item zmdi zmdi-refresh"></a>
 
 
                     </div>

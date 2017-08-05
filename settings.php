@@ -63,13 +63,23 @@ require_once('functions/get_visit_analytics.php');
                             <button type="button" class="btn btn-outline-warning" onclick="location.href='collegeinfo'">College Information</button>
                             &emsp;
                             <button type="button" class="btn btn-outline-danger" onclick="location.href='studentregistrationsettings'">Registration Status</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">Mail Templates</h2>
+                        <small class="card-subtitle">View and change the Default Mail Templates</small>
+                    </div>
+
+                    <div class="card-block">
+                        <div class="btn-demo">
+                            <button type="button" class="btn btn-outline-primary" onclick="location.href='domaininfo'">New Registration</button>
                             &emsp;
-                            <button type="button" class="btn btn-secondary">Secondary</button>
-                            <button type="button" class="btn btn-success">Success</button>
-                            <button type="button" class="btn btn-info">Info</button>
-                            <button type="button" class="btn btn-warning">Warning</button>
-                            <button type="button" class="btn btn-danger">Danger</button>
-                            <button type="button" class="btn btn-link">Link</button>
+                            <button type="button" class="btn btn-outline-warning" onclick="location.href='collegeinfo'">Something</button>
+                            &emsp;
+                            <button type="button" class="btn btn-outline-danger" onclick="location.href='studentregistrationsettings'">Something Else</button>
                         </div>
                     </div>
                 </div>
