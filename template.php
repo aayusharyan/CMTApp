@@ -1,9 +1,7 @@
 <?php
 require_once('config.php');
 require_once('check_login.php');
-require_once('functions/get_total_users.php');
-require_once('functions/get_traffic_analytics.php');
-require_once('functions/get_visit_analytics.php');
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,57 +39,57 @@ require_once('functions/get_visit_analytics.php');
 
             <section class="content">
                 <header class="content__title">
-                    <h1>Settings</h1>
-                    <small>View and Manage Settings of the Conference.</small>
+                    <h1>Domain Information</h1>
+                    <small>View and Add Domains for the Conference.</small>
 
                     <div class="actions">
-                        <a href="settings" class="actions__item zmdi zmdi-refresh"></a>
+                        <a href="users" class="actions__item zmdi zmdi-info" data-toggle="modal" data-target="#modal-info"></a>
+                        <a href="domaininfo" class="actions__item zmdi zmdi-refresh"></a>
+
 
                     </div>
                 </header>
-                
+
+
                 <div class="card">
                     <div class="card-header">
-                        <h2 class="card-title">Student Registration Settings</h2>
-                        <small class="card-subtitle">View and Update Settings for Student Registrations</small>
+                        <h2 class="card-title">Add New</h2>
                     </div>
 
                     <div class="card-block">
-                        <div class="btn-demo">
-                            <button type="button" class="btn btn-outline-primary" onclick="location.href='domaininfo'">Domain Information</button>
-                            &emsp;
-                            <button type="button" class="btn btn-outline-warning" onclick="location.href='collegeinfo'">College Information</button>
-                            &emsp;
-                            <button type="button" class="btn btn-outline-danger" onclick="location.href='studentregistrationsettings'">Registration Status</button>
-                            &emsp;
-                            <button type="button" class="btn btn-secondary">Secondary</button>
-                            <button type="button" class="btn btn-success">Success</button>
-                            <button type="button" class="btn btn-info">Info</button>
-                            <button type="button" class="btn btn-warning">Warning</button>
-                            <button type="button" class="btn btn-danger">Danger</button>
-                            <button type="button" class="btn btn-link">Link</button>
-                        </div>
+                       
                     </div>
                 </div>
-                
-                <div class="card">
-                    <div class="card-header">
-                        <h2 class="card-title">Admin Settings</h2>
-                        <small class="card-subtitle">View and Update Settings for Administrator Controls</small>
-                    </div>
 
-                    <div class="card-block">
-                        <div class="btn-demo">
-                            <button type="button" class="btn btn-outline-primary" onclick="location.href='domaininfo'">Add New</button>
-                            &emsp;
-                            <button type="button" class="btn btn-outline-warning" onclick="location.href='collegeinfo'">Change Permissions</button>
-                            &emsp;
-                            <button type="button" class="btn btn-outline-danger" onclick="location.href='studentregistrationsettings'">Remove</button>
+
+
+                <!-- Information Modal -->
+                <div class="modal fade" id="modal-info" tabindex="-1">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title pull-left">Important Information</h5>
+                            </div>
+                            <div class="modal-body">
+                                Domain Information once added cannot be changed or removed. Please keep that in Mind.
+                                Also Domain Shortname needs to be Alpha only (Should Start with an Alphabet).
+                                Domain Shortnames should be Unique
+                                Domain Shortname should be less than or equalto 6 characters
+                                <!--//TODO: Change (Improve) the Text -->
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                
+
+
+
+
+
+
                 <?php
                 require_once('include_footer.php');
                 ?>
@@ -103,6 +101,7 @@ require_once('functions/get_visit_analytics.php');
         ?>
         <!-- Vendors -->
         <script src="vendors/bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="vendors/bower_components/remarkable-bootstrap-notify/dist/bootstrap-notify.min.js"></script>
         <script src="vendors/bower_components/tether/dist/js/tether.min.js"></script>
         <script src="vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
         <script src="vendors/bower_components/Waves/dist/waves.min.js"></script>
@@ -134,6 +133,7 @@ require_once('functions/get_visit_analytics.php');
         <script src="vendors/bower_components/datatables.net-buttons/js/buttons.print.min.js"></script>
         <script src="vendors/bower_components/jszip/dist/jszip.min.js"></script>
         <script src="vendors/bower_components/datatables.net-buttons/js/buttons.html5.min.js"></script>
+
 
 
         <!-- App functions and actions -->

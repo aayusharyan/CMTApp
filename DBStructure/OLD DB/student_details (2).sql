@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 05, 2017 at 12:50 PM
+-- Generation Time: Aug 05, 2017 at 12:49 PM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 7.1.7
 
@@ -25,31 +25,35 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin_details`
+-- Table structure for table `student_details`
 --
 
-CREATE TABLE `admin_details` (
+CREATE TABLE `student_details` (
   `id` int(11) NOT NULL,
   `email` varchar(256) NOT NULL,
   `password` varchar(256) NOT NULL,
-  `name` varchar(256) NOT NULL
+  `name` varchar(256) NOT NULL,
+  `create_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `admin_details`
+-- Dumping data for table `student_details`
 --
 
-INSERT INTO `admin_details` (`id`, `email`, `password`, `name`) VALUES
-(1, 'aayush.aryan@me.com', 'admin', 'Aayush Sinha');
+INSERT INTO `student_details` (`id`, `email`, `password`, `name`, `create_date`) VALUES
+(1, 'admin@admin', '12345', 'Sudha', '0000-00-00'),
+(2, 'sample@mail.com', '12345', 'Sample', '2017-08-01'),
+(3, 'sample1@mail.com', '12345', 'Sample', '2017-08-01'),
+(4, 'sample2@mail.com', '12345', 'Sample', '2017-08-02');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `admin_details`
+-- Indexes for table `student_details`
 --
-ALTER TABLE `admin_details`
+ALTER TABLE `student_details`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `email` (`email`);
 
@@ -58,10 +62,10 @@ ALTER TABLE `admin_details`
 --
 
 --
--- AUTO_INCREMENT for table `admin_details`
+-- AUTO_INCREMENT for table `student_details`
 --
-ALTER TABLE `admin_details`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;COMMIT;
+ALTER TABLE `student_details`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

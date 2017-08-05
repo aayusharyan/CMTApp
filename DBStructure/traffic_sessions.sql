@@ -25,43 +25,50 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin_details`
+-- Table structure for table `traffic_sessions`
 --
 
-CREATE TABLE `admin_details` (
+CREATE TABLE `traffic_sessions` (
   `id` int(11) NOT NULL,
-  `email` varchar(256) NOT NULL,
-  `password` varchar(256) NOT NULL,
-  `name` varchar(256) NOT NULL
+  `from_ip` varchar(256) NOT NULL,
+  `visit_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `admin_details`
+-- Dumping data for table `traffic_sessions`
 --
 
-INSERT INTO `admin_details` (`id`, `email`, `password`, `name`) VALUES
-(1, 'aayush.aryan@me.com', 'admin', 'Aayush Sinha');
+INSERT INTO `traffic_sessions` (`id`, `from_ip`, `visit_date`) VALUES
+(1, '::1', '2017-08-04'),
+(2, '::1', '2017-08-04'),
+(3, '::1', '2017-08-04'),
+(4, '::1', '2017-08-04'),
+(5, '::1', '2017-08-04'),
+(6, '::1', '2017-08-04'),
+(7, '::1', '2017-08-04'),
+(8, '::1', '2017-08-04'),
+(9, '::1', '2017-08-05'),
+(10, '::1', '2017-08-05');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `admin_details`
+-- Indexes for table `traffic_sessions`
 --
-ALTER TABLE `admin_details`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `email` (`email`);
+ALTER TABLE `traffic_sessions`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `admin_details`
+-- AUTO_INCREMENT for table `traffic_sessions`
 --
-ALTER TABLE `admin_details`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;COMMIT;
+ALTER TABLE `traffic_sessions`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

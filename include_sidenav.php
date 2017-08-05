@@ -3,7 +3,7 @@
 
 
         <ul class="navigation">
-            <li class="navigation__active"><a href="index.html"><i class="zmdi zmdi-home"></i> Home</a></li>
+            <li><a href="dashboard"><i class="zmdi zmdi-home"></i> Home</a></li>
 
             
 
@@ -14,7 +14,7 @@
 
             <li><a href="calendar.html"><i class="zmdi zmdi-calendar"></i> Send Mails</a></li>
 
-            <li><a href="photo-gallery.html"><i class="zmdi zmdi-image"></i> Conference Settings</a></li>
+            <li><a href="settings"><i class="zmdi zmdi-image"></i> Conference Settings</a></li>
         </ul>
     </div>
 </aside>

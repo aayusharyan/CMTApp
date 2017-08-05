@@ -1,3 +1,6 @@
+<?php
+require_once('config.php');
+?>
 <header class="header">
     <div class="navigation-trigger hidden-xl-up" data-ma-action="aside-open" data-ma-target=".sidebar">
         <div class="navigation-trigger__inner">
@@ -8,7 +11,7 @@
     </div>
 
     <div class="header__logo hidden-sm-down">
-        <h1><a href="index.html"><?= CONF_NAME ?></a></h1>
+        <h1><a href="dashboard"><?= CONF_NAME ?></a></h1>
     </div>
 
     <form class="search">
@@ -214,7 +217,7 @@
 
             <div class="dropdown-menu dropdown-menu-right">
 
-                <a href="settings" class="dropdown-item">Settings</a>
+                <a href="settings" class="dropdown-item">Profile Settings</a>
                 <a href="logout" class="dropdown-item">Logout</a>
             </div>
         </li>

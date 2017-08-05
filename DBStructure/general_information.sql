@@ -25,43 +25,33 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin_details`
+-- Table structure for table `general_information`
 --
 
-CREATE TABLE `admin_details` (
-  `id` int(11) NOT NULL,
-  `email` varchar(256) NOT NULL,
-  `password` varchar(256) NOT NULL,
-  `name` varchar(256) NOT NULL
+CREATE TABLE `general_information` (
+  `name` varchar(256) NOT NULL,
+  `data` varchar(256) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `admin_details`
+-- Dumping data for table `general_information`
 --
 
-INSERT INTO `admin_details` (`id`, `email`, `password`, `name`) VALUES
-(1, 'aayush.aryan@me.com', 'admin', 'Aayush Sinha');
+INSERT INTO `general_information` (`name`, `data`) VALUES
+('isAttendeeRegistrationsOpen', 'true'),
+('isPresenterRegistrationsOpen', 'true'),
+('isStudentRegistrationsOpen', 'true');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `admin_details`
+-- Indexes for table `general_information`
 --
-ALTER TABLE `admin_details`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `email` (`email`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `admin_details`
---
-ALTER TABLE `admin_details`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;COMMIT;
+ALTER TABLE `general_information`
+  ADD PRIMARY KEY (`name`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -1,4 +1,10 @@
 RewriteEngine On
+
 RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^users/(.*)$ userdetails.php?param=$1 [L]
+
 RewriteRule ^([^\.]+)$ $1.php [NC,L]
 RewriteRule ^([^\.]+)$ $1.html [NC,L]
+

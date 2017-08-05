@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 05, 2017 at 12:50 PM
+-- Generation Time: Aug 04, 2017 at 11:33 AM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 7.1.7
 
@@ -25,43 +25,37 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin_details`
+-- Table structure for table `activity`
 --
 
-CREATE TABLE `admin_details` (
+CREATE TABLE `activity` (
   `id` int(11) NOT NULL,
-  `email` varchar(256) NOT NULL,
-  `password` varchar(256) NOT NULL,
-  `name` varchar(256) NOT NULL
+  `type` varchar(256) NOT NULL,
+  `action_by` varchar(256) NOT NULL,
+  `action_by_id` int(11) NOT NULL,
+  `action_by_name` varchar(256) NOT NULL,
+  `information` varchar(256) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `admin_details`
---
-
-INSERT INTO `admin_details` (`id`, `email`, `password`, `name`) VALUES
-(1, 'aayush.aryan@me.com', 'admin', 'Aayush Sinha');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `admin_details`
+-- Indexes for table `activity`
 --
-ALTER TABLE `admin_details`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `email` (`email`);
+ALTER TABLE `activity`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `admin_details`
+-- AUTO_INCREMENT for table `activity`
 --
-ALTER TABLE `admin_details`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;COMMIT;
+ALTER TABLE `activity`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
