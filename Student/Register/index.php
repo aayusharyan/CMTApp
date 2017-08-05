@@ -1,3 +1,9 @@
+<?php
+require_once("get_domain_details.php");
+require_once("get_college_details.php");
+?>
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -25,7 +31,7 @@
 </head>
 
 <body>
-	<div class="image-container set-full-height" style="background-image: url('img/wizard-book.jpg')">
+	<div class="image-container set-full-height" style="background-image: url('img/wizard-book.jpg'); background-attachment: fixed">
 	    
 
 	    <!--   Big container   -->
@@ -65,7 +71,7 @@
                                                     </span>
                                                     <div class="form-group label-floating">
                                                         <label class="control-label">Name <small>(required)</small></label>
-                                                        <input name="name" type="text" class="form-control">
+                                                        <input name="name" type="text" class="form-control" required>
                                                     </div>
                                                 </div>
                                                 
@@ -75,7 +81,7 @@
                                                     </span>
                                                     <div class="form-group label-floating">
                                                         <label class="control-label">Your Email Id</label>
-                                                        <input name="email" type="text" class="form-control" >
+                                                        <input name="email" type="text" class="form-control" required pattern="[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*" >
                                                     </div>
                                                 </div>
 
@@ -85,7 +91,7 @@
                                                     </span>
                                                     <div class="form-group label-floating">
                                                         <label class="control-label">Your Password</label>
-                                                        <input type="password" name="password" class="form-control">
+                                                        <input type="password" name="password" class="form-control" required>
                                                         
                                                     </div>
                                                 </div>
@@ -97,7 +103,7 @@
                                                         <i class="material-icons">phone</i>&emsp;+91                                                  </span>
                                                     <div class="form-group label-floating">
                                                         <label class="control-label">Phone No. <small>(required)</small></label>
-                                                        <input name="phone" type="text" class="form-control">
+                                                        <input name="phone" type="text" class="form-control" required minlength="10" maxlength="10">
                                                     </div>
                                                 </div>
                                                 <div class="input-group">
@@ -105,11 +111,11 @@
                                                         <i class="material-icons">account_box</i>                                                   </span>
                                                     <div class="form-group label-floating">
                                                         <label class="control-label">Gender</label>
-                                                        <select class="form-control" name="gender">
+                                                        <select class="form-control" name="gender" required>
                                                             <option disabled="" selected=""></option>
-                                                            <option value="Male"> Male </option>
-                                                            <option value="Female"> Female </option>
-                                                            <option value="Other"> Prefer Not  to Say </option>
+                                                            <option value="M"> Male </option>
+                                                            <option value="F"> Female </option>
+                                                            <option value="O"> Prefer Not  to Say </option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -118,10 +124,10 @@
                                                         <i class="material-icons">style</i>                                                   </span>
                                                     <div class="form-group label-floating">
                                                         <label class="control-label">Role</label>
-                                                        <select class="form-control" name="role">
+                                                        <select class="form-control" name="role" required>
                                                             <option disabled="" selected=""></option>
-                                                            <option value="Presenter"> Presenter </option>
-                                                            <option value="Attendee"> Attendee </option>
+                                                            <option value="P"> Presenter </option>
+                                                            <option value="A"> Attendee </option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -138,13 +144,18 @@
                                                     <i class="material-icons">school</i>                                                   </span>
                                                 <div class="form-group label-floating">
                                                     <label class="control-label">College</label>
-                                                    <select class="form-control" name="college">
+                                                    <select class="form-control" name="college" required>
                                                         <option disabled="" selected=""></option>
-                                                        <option value="Afghanistan"> Sinhgad Institute of Technology, Lonavala </option>
-                                                        <option value="Albania"> Albania </option>
-                                                        <option value="Algeria"> Algeria </option>
-                                                        <option value="..."> Other </option>
+                                                        
+                                                    <?php
+                                                        $data = get_college_details();
+                                                        foreach($data as $college_names){
+                                                    ?>
+                                                        <option value="<?=$college_names->short_name?>"><?=$college_names->full_name?></option>
+                                                        
+                                                    <?php } ?>
                                                     </select>
+
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -154,7 +165,7 @@
                                                             <i class="material-icons">layers</i>                                                   </span>
                                                         <div class="form-group label-floating">
                                                             <label class="control-label">Branch</label>
-                                                            <select class="form-control" name="branch">
+                                                            <select class="form-control" name="branch" required>
                                                                 <option disabled="" selected=""></option>
                                                                 <option value="Computer Enginerring"> Computer Enginerring </option>
                                                                 <option value="Information Technology"> Information Technology </option>
@@ -170,14 +181,14 @@
                                                             <i class="material-icons">library_books</i>                                                   </span>
                                                         <div class="form-group label-floating">
                                                             <label class="control-label">Academic Year</label>
-                                                            <select class="form-control" name="year">
+                                                            <select class="form-control" name="year" required>
                                                                 <option disabled="" selected=""></option>
-                                                                <option disabled="">--Bachelor's--</option>
+                                                                <option disabled="" style="font-weight: 900;">--Bachelor's--</option>
                                                                 <option value="First Year"> First Year </option>
                                                                 <option value="Second Year"> Second Year </option>
                                                                 <option value="Third Year"> Third Year </option>
                                                                 <option value="Fourth Year"> Fourth Year </option>
-                                                                <option disabled="">--Master's--</option>
+                                                                <option disabled="" style="font-weight: 900;">--Master's--</option>
                                                                 <option value="Master's First Year"> First Year </option>
                                                                 <option value="Master's Second Year"> Second Year </option>
                                                             </select>
@@ -192,98 +203,23 @@
 		                            <div class="tab-pane" id="extras">
 		                                <div class="row">
 		                                    <h4 class="info-text"> Your Interest's</h4>
-                                            <div class="col-sm-4 col-sm-offset-1">
-                                                <div class="checkbox form-group">
-                                                    <label>
-                                                        <input type="checkbox" name="checkbox[]" value="Cyber Security">
-                                                        Cyber Security
-                                                    </label>
-                                                </div>
-                                                <div class="checkbox form-group">
-                                                    <label>
-                                                        <input type="checkbox" name="checkbox[]" value="Computer Networking">
-                                                       Computer Networking
-                                                    </label>
-                                                </div>
-                                                <div class="checkbox form-group">
-                                                    <label>
-                                                        <input type="checkbox" name="checkbox[]" value="System Engineering">
-                                                        System Engineering
-                                                    </label>
-                                                </div>
-                                                <div class="checkbox form-group">
-                                                    <label>
-                                                        <input type="checkbox" name="checkbox[]" value="Database Management">
-                                                        Database Management
-                                                    </label>
-                                                </div>
-                                                <div class="checkbox form-group">
-                                                    <label>
-                                                        <input type="checkbox" name="checkbox[]" value="Data Structures">
-                                                        Data Structures
-                                                    </label>
-                                                </div>
-                                                <div class="checkbox form-group">
-                                                    <label>
-                                                        <input type="checkbox" name="checkbox[]">
-                                                        Unchecked
-                                                    </label>
-                                                </div>
-                                                <div class="checkbox form-group">
-                                                    <label>
-                                                        <input type="checkbox" name="checkbox[]">
-                                                        Unchecked
-                                                    </label>
-                                                </div>
+                                            <?php
+                                                $data = get_domain_details();
+                                                foreach ($data as $single_domain){
+                                                    
                                                 
-		                                    </div>
-                                            
+                                            ?>
                                             <div class="col-sm-4 col-sm-offset-1">
                                                 <div class="checkbox form-group">
                                                     <label>
-                                                        <input type="checkbox" name="checkbox[]">
-                                                        Unchecked
+                                                        <input type="checkbox" name="checkbox[]" value="<?=$single_domain->short_name;?>">
+                                                        <?=$single_domain->full_name;?>
                                                     </label>
                                                 </div>
-                                                <div class="checkbox form-group">
-                                                    <label>
-                                                        <input type="checkbox" name="checkbox[]">
-                                                        Unchecked
-                                                    </label>
-                                                </div>
-                                                <div class="checkbox form-group">
-                                                    <label>
-                                                        <input type="checkbox" name="checkbox[]">
-                                                        Uncheckedcheckbox[]
-                                                    </label>
-                                                </div>
-                                                <div class="checkbox form-group">
-                                                    <label>
-                                                        <input type="checkbox" name="checkbox[]">
-                                                        Unchecked
-                                                    </label>
-                                                </div>
-                                                <div class="checkbox form-group">
-                                                    <label>
-                                                        <input type="checkbox" name="checkbox[]">
-                                                        Unchecked
-                                                    </label>
-                                                </div>
-                                                <div class="checkbox form-group">
-                                                    <label>
-                                                        <input type="checkbox" name="checkbox[]">
-                                                        Unchecked
-                                                    </label>
-                                                </div>
-                                                <div class="checkbox form-group">
-                                                    <label>
-                                                        <input type="checkbox" name="checkbox[]">
-                                                        Unchecked
-                                                    </label>
-                                                </div>
-
-                                            </div>
-                                            
+		                                    </div>
+                                            <?php
+                                                    }
+                                            ?>
 		                                </div>
 		                            </div>
 		                        </div>
