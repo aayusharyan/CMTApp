@@ -2,6 +2,30 @@
 require_once('config.php');
 require_once('check_login.php');
 require_once('functions/get_student_list.php');
+
+$pretty_view_options = [
+    "email" => "EMail",
+    "name" => "Name",
+    "create_date" => "Registration Date",
+    "phone" => "Phone",
+    "role" => "Role",
+    "branch" => "Branch",
+    "academic_year" => "Academic Year",
+    "college" => "College",
+    "domains" => "Domain(s)",
+    "gender" => "Gender",
+    "status" => "Status"
+];
+
+if (isset ($_GET['view_options'])) {
+    $view_options = $_GET['view_options'];
+    if (in_array('uid', $view_options)) {
+        unset($view_options[array_search ('uid', $view_options)]);
+    }
+} else {
+    $view_options = ['name', 'college', 'email', 'role', 'status'];
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,6 +44,9 @@ require_once('functions/get_student_list.php');
         <style>
             .no-margin-below {
                 margin-bottom: 0px !important;
+            }
+            .right {
+                text-align: right;
             }
         </style>
     </head>
@@ -61,28 +88,30 @@ require_once('functions/get_student_list.php');
                             
                             <table id="data-table" class="table table-bordered">
                                 <?php
-                                
                                 $students = get_student_list();
-                                
                                 ?>
                                 <thead class="thead-default">
                                     <tr>
                                         <th>ID</th>
-                                        <th>Name</th>
-                                        <th>College</th>
-                                        <th>EMail Id</th>
-                                        <th>Role</th>
-                                        <th>Status</th>
+                                        <?php
+                                        foreach ($view_options as $single_view) {
+                                        ?>
+                                        <th><?= $pretty_view_options[$single_view]; ?></th>
+                                        <?php
+                                        }
+                                        ?>
                                     </tr>
                                 </thead>
                                 <tfoot>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Name</th>
-                                        <th>College</th>
-                                        <th>EMail Id</th>
-                                        <th>Role</th>
-                                        <th>Status</th>
+                                        <?php
+                                        foreach ($view_options as $single_view) {
+                                        ?>
+                                        <th><?= $pretty_view_options[$single_view]; ?></th>
+                                        <?php
+                                        }
+                                        ?>
                                     </tr>
                                 </tfoot>
                                 <tbody>
@@ -92,11 +121,13 @@ require_once('functions/get_student_list.php');
                                     ?>
                                     <tr>
                                         <td><button onclick="location.href='users/<?= $single_Student->uid; ?>'" type="button" class="btn btn-link waves-effect" style="padding-left: 0px; padding-right: 0px;"><?= $single_Student->uid; ?></button></td>
-                                        <td><?= $single_Student->name; ?></td>
-                                        <td><?= $single_Student->college; ?></td>
-                                        <td><?= $single_Student->email; ?></td>
-                                        <td><?= $single_Student->role; ?></td>
-                                        <td><?= $single_Student->status; ?></td>
+                                        <?php 
+                                        foreach ($view_options as $single_view) {
+                                        ?>
+                                        <td><?= $single_Student->$single_view ?></td>
+                                        <?php  
+                                        }
+                                        ?>
                                     </tr>
                                     <?php
                                     }
@@ -120,56 +151,39 @@ require_once('functions/get_student_list.php');
                                 <?php
                                 //TODO: Change the Values here everytime there is a Change in the Student DB!!! IMPORTANT
                                 ?>
-
-                                <div class="form-group no-margin-below">
-                                    <label><h2 class="card-block__title">LOLOL</h2></label>
-                                    <div class="toggle-switch">
-                                        <input type="checkbox" class="toggle-switch__checkbox">
-                                        <i class="toggle-switch__helper"></i>
-                                    </div>
-                                </div>
-                                <div class="form-group no-margin-below">
-                                    <label><h2 class="card-block__title">LOLOL</h2></label>
-                                    <div class="toggle-switch">
-                                        <input type="checkbox" class="toggle-switch__checkbox">
-                                        <i class="toggle-switch__helper"></i>
-                                    </div>
-                                </div>
-                                <div class="form-group no-margin-below">
-                                    <label><h2 class="card-block__title">LOLOL</h2></label>
-                                    <div class="toggle-switch">
-                                        <input type="checkbox" class="toggle-switch__checkbox">
-                                        <i class="toggle-switch__helper"></i>
-                                    </div>
-                                </div>
-                                <div class="form-group no-margin-below">
-                                    <label><h2 class="card-block__title">LOLOL</h2></label>
-                                    <div class="toggle-switch">
-                                        <input type="checkbox" class="toggle-switch__checkbox">
-                                        <i class="toggle-switch__helper"></i>
-                                    </div>
-                                </div>
-                                <div class="form-group no-margin-below">
-                                    <label><h2 class="card-block__title">LOLOL</h2></label>
-                                    <div class="toggle-switch">
-                                        <input type="checkbox" class="toggle-switch__checkbox">
-                                        <i class="toggle-switch__helper"></i>
-                                    </div>
-                                </div>
-                                <div class="form-group no-margin-below">
-                                    <label><h2 class="card-block__title">LOLOL</h2></label>
-                                    <div class="toggle-switch">
-                                        <input type="checkbox" class="toggle-switch__checkbox">
-                                        <i class="toggle-switch__helper"></i>
-                                    </div>
-                                </div>
                                 
+                                <form id="custom_view_form" action="users" method="GET">
+                                    
+                                    <div class="form-group no-margin-below row">
+                                        <label class="col-sm-6 col-md-4 col-xl-3"><h2 class="card-block__title right">UID:</h2></label>
+                                        <div class="toggle-switch">
+                                            <input type="checkbox" name="view_options[]" value="uid" checked class="toggle-switch__checkbox" onclick="return false;">
+                                            <i class="toggle-switch__helper"></i>
+                                        </div>
+                                    </div>
+                                    
+                                    <?php
+                                    foreach ($pretty_view_options as $single_view_option_key=>$single_view_option_value) {
+                                    ?>
+                                        <div class="form-group no-margin-below row">
+                                            <label class="col-sm-6 col-md-4 col-xl-3"><h2 class="card-block__title right"><?= $single_view_option_value; ?>:</h2></label>
+                                            <div class="toggle-switch">
+                                                <input type="checkbox" name="view_options[]" value="<?= $single_view_option_key; ?>" <?= in_array($single_view_option_key, $view_options)?"checked":""; ?> class="toggle-switch__checkbox">
+                                                <i class="toggle-switch__helper"></i>
+                                            </div>
+                                        </div>
+                                    <?php
+                                    }
+                                    ?>
+                                
+                               
+                                </form>
                             </div>
                             <div class="modal-footer">
                                 
                                 
                                 <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-success">View</button>
+                                <button type="button" class="btn btn-success" onclick="custom_view();">View</button>
                             </div>
                         </div>
                     </div>
@@ -226,6 +240,15 @@ require_once('functions/get_student_list.php');
         <script src="js/app.min.js"></script>
         
         
+        <!-- Function for Custom View -->
+        <script>
+        function custom_view () {
+            $("#custom_view_form").submit();
+        }
+        
+            
+        </script>
+        <!-- End Function for Custom View -->
         
     </body>
 </html>
