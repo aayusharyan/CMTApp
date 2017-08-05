@@ -1,9 +1,7 @@
 <?php
 require_once('config.php');
 require_once('check_login.php');
-require_once('functions/get_total_users.php');
-require_once('functions/get_traffic_analytics.php');
-require_once('functions/get_visit_analytics.php');
+require_once('functions/get_student_list.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -54,7 +52,13 @@ require_once('functions/get_visit_analytics.php');
 
                     <div class="card-block">
                         <div class="table-responsive">
+                            
                             <table id="data-table" class="table table-bordered">
+                                <?php
+                                
+                                $students = get_student_list();
+                                
+                                ?>
                                 <thead class="thead-default">
                                     <tr>
                                         <th>ID</th>
@@ -76,22 +80,22 @@ require_once('functions/get_visit_analytics.php');
                                     </tr>
                                 </tfoot>
                                 <tbody>
+                                    <?php
+                                    foreach($students as $single_Student) {
+                                    
+                                    ?>
                                     <tr>
-                                        <td>CS20180001</td>
-                                        <td>Aayush Sinha</td>
-                                        <td>SIT, Lonavala</td>
-                                        <td>aayush.aryan@me.com</td>
-                                        <td>Presenter</td>
-                                        <td>Paper Uploaded</td>
+                                        <td><?= $single_Student->uid; ?></td>
+                                        <td><?= $single_Student->name; ?></td>
+                                        <td><?= $single_Student->college; ?></td>
+                                        <td><?= $single_Student->email; ?></td>
+                                        <td><?= $single_Student->role; ?></td>
+                                        <td><?= $single_Student->status; ?></td>
                                     </tr>
-                                    <tr>
-                                        <td>CN20180003</td>
-                                        <td>Sudarshan Amirineni</td>
-                                        <td>SIT, Lonavala</td>
-                                        <td>suda_amir@gmail.com</td>
-                                        <td>Attendee</td>
-                                        <td>Waiting for Payment</td>
-                                    </tr>
+                                    <?php
+                                    }
+                                    ?>
+                                    
                                 </tbody>
                             </table>
                         </div>
