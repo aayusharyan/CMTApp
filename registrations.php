@@ -76,7 +76,7 @@ if (isset ($_GET['view_options'])) {
 
                     <div class="actions">
                         <button type="button" class="btn btn-outline-warning waves-effect" data-toggle="modal" data-target="#modal-info">View Custom Fields</button>
-                        <a href="users" class="actions__item zmdi zmdi-refresh"></a>
+                        <a href="registrations" class="actions__item zmdi zmdi-refresh"></a>
 
                     </div>
                 </header>
@@ -120,7 +120,7 @@ if (isset ($_GET['view_options'])) {
                                     
                                     ?>
                                     <tr>
-                                        <td><button onclick="location.href='users/<?= $single_Student->uid; ?>'" type="button" class="btn btn-link waves-effect" style="padding-left: 0px; padding-right: 0px;"><?= $single_Student->uid; ?></button></td>
+                                        <td><button onclick="location.href='userdetails?id=<?= $single_Student->uid; ?>'" type="button" class="btn btn-link waves-effect" style="padding-left: 0px; padding-right: 0px;"><?= $single_Student->uid; ?></button></td>
                                         <?php 
                                         foreach ($view_options as $single_view) {
                                         ?>
@@ -152,7 +152,7 @@ if (isset ($_GET['view_options'])) {
                                 //TODO: Change the Values here everytime there is a Change in the Student DB!!! IMPORTANT
                                 ?>
                                 
-                                <form id="custom_view_form" action="users" method="GET">
+                                <form id="custom_view_form" action="registrations" method="GET">
                                     
                                     <div class="form-group no-margin-below row">
                                         <label class="col-sm-6 col-md-4 col-xl-3"><h2 class="card-block__title right">UID:</h2></label>

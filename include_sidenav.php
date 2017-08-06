@@ -7,7 +7,7 @@
 
             
 
-            <li><a href="users"><i class="zmdi zmdi-format-underlined"></i> Users</a></li>
+            <li><a href="registrations"><i class="zmdi zmdi-format-underlined"></i> Users</a></li>
 
             <li><a href="widgets.html"><i class="zmdi zmdi-widgets"></i> Reviewers</a></li>
 

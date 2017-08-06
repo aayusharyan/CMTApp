@@ -69,6 +69,23 @@ require_once('functions/get_visit_analytics.php');
                 
                 <div class="card">
                     <div class="card-header">
+                        <h2 class="card-title">Paper Presentee and Reviewer Settings</h2>
+                        <small class="card-subtitle">View and Update Settings for Paper Presentation</small>
+                    </div>
+
+                    <div class="card-block">
+                        <div class="btn-demo">
+                            <button type="button" class="btn btn-outline-primary">Paper Acceptance Status</button>
+                            &emsp;
+                            <button type="button" class="btn btn-outline-warning" onclick="location.href='collegeinfo'">Reviewer Settings</button>
+                            &emsp;
+                            <button type="button" class="btn btn-outline-danger" onclick="location.href='studentregistrationsettings'">Something Else</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
                         <h2 class="card-title">Mail Templates</h2>
                         <small class="card-subtitle">View and change the Default Mail Templates</small>
                     </div>
