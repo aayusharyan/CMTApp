@@ -2,6 +2,7 @@
 
 require_once('config.php');
 
+
 $password = $_POST['password'];
 $email = $_POST['email'];
 $name = $_POST['name'];
@@ -12,14 +13,6 @@ $acad_year = $_POST['year'];
 $branch = $_POST['branch'];
 $college = $_POST['college'];
 $domains = implode($_POST['checkbox'], ', ');
-
-if(strlen($number)!=10){
-    echo "Error";
-}
-
-if(!ctype_digit($number))
-    echo "Error with phone number";
-
 
 
 try{
@@ -38,16 +31,18 @@ try{
     $stmt->bindParam("domains", $domains,PDO::PARAM_STR) ;
     $stmt->execute();
     
-    $year = 2018;
-    if(count($domains)!=1)
+    if(count($_POST['checkbox'])!=1)
         $domains = "MUL";        
     $id = $db->lastInsertId();
     
     $db = null;
     $db = getDB();
-
+    $ncollege = str_pad($college, 5, "0", STR_PAD_LEFT);
     $nid = str_pad($id, 4, "0", STR_PAD_LEFT); 
-    $UID = $domains.$year.$role.$nid;
+    $year = date("Y");
+    $nyear = substr($year, -1);
+    
+    $UID = $role.$domains.$nyear.$ncollege.$nid;
    
     $stmt1 = $db->prepare("UPDATE `student_details` SET `uid`=:uid WHERE `id`=:id"); 
     $stmt1->bindParam(":uid", $UID,PDO::PARAM_STR) ;

@@ -1,3 +1,9 @@
+<?php
+session_start();
+
+$error_flag = $_SESSION['isLoginError'] ?? false;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

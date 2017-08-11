@@ -27,8 +27,8 @@ try {
 if ($isUserMatch) {
     header('location: dashboard');
 } else {
-    //$_SESSION['isLoginError'] = true;
-    //header ('location: index');
+    $_SESSION['isLoginError'] = true;
+    header ('location: index');
 }
 
 
