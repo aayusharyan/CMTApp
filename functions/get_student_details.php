@@ -13,7 +13,7 @@ function get_student_details ($student_uid) {
         if($count)  {
             return ($data);
         }   else {
-            header ('location: registations');
+            header ('location: registrations');
         }
     }   catch(PDOException $e) {
         echo '{"error":{"text":'. $e->getMessage() .'}}';

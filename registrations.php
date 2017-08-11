@@ -153,28 +153,33 @@ if (isset ($_GET['view_options'])) {
                                 ?>
                                 
                                 <form id="custom_view_form" action="registrations" method="GET">
-                                    
+                                    <div class="row">
+                                    <div class="col-xl-6">
                                     <div class="form-group no-margin-below row">
-                                        <label class="col-sm-6 col-md-4 col-xl-3"><h2 class="card-block__title right">UID:</h2></label>
+                                        <label class="col-sm-6 col-md-4 col-xl-6"><h2 class="card-block__title right">UID:</h2></label>
                                         <div class="toggle-switch">
                                             <input type="checkbox" name="view_options[]" value="uid" checked class="toggle-switch__checkbox" onclick="return false;">
                                             <i class="toggle-switch__helper"></i>
                                         </div>
                                     </div>
+                                    </div>
                                     
                                     <?php
                                     foreach ($pretty_view_options as $single_view_option_key=>$single_view_option_value) {
                                     ?>
+                                    <div class="col-xl-6">
                                         <div class="form-group no-margin-below row">
-                                            <label class="col-sm-6 col-md-4 col-xl-3"><h2 class="card-block__title right"><?= $single_view_option_value; ?>:</h2></label>
+                                            <label class="col-sm-6 col-md-4 col-xl-6"><h2 class="card-block__title right"><?= $single_view_option_value; ?>:</h2></label>
                                             <div class="toggle-switch">
                                                 <input type="checkbox" name="view_options[]" value="<?= $single_view_option_key; ?>" <?= in_array($single_view_option_key, $view_options)?"checked":""; ?> class="toggle-switch__checkbox">
                                                 <i class="toggle-switch__helper"></i>
                                             </div>
                                         </div>
+                                    </div>
                                     <?php
                                     }
                                     ?>
+                                    </div>
                                 
                                
                                 </form>

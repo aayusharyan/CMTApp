@@ -71,7 +71,15 @@ if (!(isset ($_GET['id']))) {
                     </div>
 
                     <div class="card-block">
-                        
+                        <p class="lead">
+                            ID: <a href="userdetails?id=<?= $student_details->uid; ?>"><?= $student_details->uid; ?></a><br />
+                            <br />
+                            Name: <?= $student_details->name; ?><br />
+                            EMail: <a href="sendmail?id=<?= $student_details->uid; ?>"><?= $student_details->email; ?></a><br />
+                            Phone: <?= $student_details->phone; ?><br />
+                            <br />
+                            Role: <?= ($student_details->role == "P")?"Presenter":"Attendee"; ?>
+                        </p>
                     </div>
 
                 </div>

@@ -145,7 +145,7 @@ if (isset ($_SESSION['errorAddingCollege'])) {
                             </div>
                             <div class="modal-body">
                                 College Information once added cannot be changed or removed. Please keep that in Mind.
-                                College Shortnames should be Unique. College Code is of Pune University. (Not Mandatory)
+                                College Shortnames should be Unique Length of College Short Names Should be Less than 5 Characters (AlphaNumeric). College Code is of Pune University. (Not Mandatory)
                                 <!--//TODO: Change (Improve) the Text -->
                             </div>
                             <div class="modal-footer">

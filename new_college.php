@@ -8,7 +8,7 @@ $new_college_code = $_POST['college_code'];
 
 $_SESSION['errorAddingCollege'] = false;
 
-if (($new_college_name != "") && ($new_college_shortname != "")) {
+if (($new_college_name != "") && ($new_college_shortname != "") && (strlen($new_college_shortname) <= 5) && (ctype_alnum($new_college_shortname)) {
     try {
         $db = getDB();
         $stmt = $db->prepare("INSERT INTO colleges (code, short_name, full_name) VALUES (:college_code, :college_short_name, :college_full_name)");
